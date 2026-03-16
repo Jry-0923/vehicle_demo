@@ -2,10 +2,12 @@ import argparse
 from pathlib import Path
 
 import cv2
+
 from ultralytics import YOLO
 
 # COCO 类别：car=2, bus=5, truck=7
 VEHICLE_CLASSES = {2: "car", 5: "bus", 7: "truck"}
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Vehicle detection demo")
@@ -16,6 +18,7 @@ def parse_args():
     )
     return parser.parse_args()
 
+
 def main():
     args = parse_args()
     model = YOLO("yolov8n.pt")
@@ -24,8 +27,6 @@ def main():
 
     if not cap.isOpened():
         raise FileNotFoundError(f"无法打开视频文件: {video_path}")
-
-    
 
     while True:
         ret, frame = cap.read()
@@ -55,15 +56,7 @@ def main():
                 cv2.circle(frame, (u, v), 4, (0, 0, 255), -1)
 
                 # 屏幕显示
-                cv2.putText(
-                    frame,
-                    label_line,
-                    (x1, max(0, y1 - 8)),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
-                    (0, 255, 0),
-                    2
-                )
+                cv2.putText(frame, label_line, (x1, max(0, y1 - 8)), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
                 cv2.putText(
                     frame,
                     info_line,
@@ -71,7 +64,7 @@ def main():
                     cv2.FONT_HERSHEY_SIMPLEX,
                     0.5,
                     (0, 255, 0),
-                    2
+                    2,
                 )
 
                 # 终端输出坐标
@@ -85,6 +78,7 @@ def main():
     cap.release()
     if not args.no_show:
         cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     main()
