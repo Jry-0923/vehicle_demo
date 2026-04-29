@@ -22,7 +22,18 @@ This is a validation and pseudo-label refinement step. The confidence should be
 lower for extreme one-face views, heavy occlusion, or when most of the vehicle
 volume is completed from priors.
 
-Example:
+Export MoGe point maps first:
+
+```bash
+python vehicle_demo/labeling_scripts/export_moge_pointmaps.py \
+  --images-dir vehicle_demo/4.15Test/4_15_Frames/Target7 \
+  --output-dir vehicle_demo/outputs/moge_target7_npz \
+  --max-side 768 \
+  --resolution-level 5 \
+  --dtype float16
+```
+
+Then run box completion:
 
 ```bash
 python vehicle_demo/labeling_scripts/moge_box_completion_validator.py \
