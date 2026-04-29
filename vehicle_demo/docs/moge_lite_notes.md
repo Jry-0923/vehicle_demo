@@ -54,3 +54,16 @@ Expected MoGe `.npz` keys are flexible. The script auto-detects common names:
 
 If only depth is stored, the `.npz` must also contain a 3x3 intrinsics matrix so
 the script can back-project pixels into metric 3D points.
+
+Align MoGe coordinates to the current project pseudo-label frame:
+
+```bash
+python vehicle_demo/labeling_scripts/align_moge_completion.py \
+  --moge-completion-json vehicle_demo/outputs/4_15_target7_moge_lite_completion.json \
+  --output-json vehicle_demo/outputs/4_15_target7_moge_lite_completion_aligned.json \
+  --bev-png vehicle_demo/outputs/4_15_target7_moge_lite_completion_aligned_bev.png \
+  --mode uniform \
+  --fit-source visible
+```
+
+Use `--mode affine` only as a diagnostic. It can reduce fit error, but it is less physically constrained than uniform scale plus translation.
