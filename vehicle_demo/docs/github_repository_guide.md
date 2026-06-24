@@ -1,11 +1,13 @@
-# GitHub Repository Guide
+# GeoVehicle3D GitHub Repository Guide
 
 This repository should track source code, reproducible entrypoints, notebooks,
 and small documentation artifacts only. It should not track local datasets,
 model weights, generated outputs, virtual environments, or third-party
 checkouts.
 
-The GitHub main branch should represent the research contribution, not the
+The GitHub main branch should present `GeoVehicle3D`: a vision-centric 3D
+vehicle-center estimation pipeline. It should represent the research
+contribution, not the
 detector dependency. In this project, YOLO is a 2D proposal stage. The novel
 part is the vehicle-center pseudo-labeling pipeline built around image geometry,
 MASt3R/MoGe-style point maps, MonoDETR comparison, radar validation, temporal

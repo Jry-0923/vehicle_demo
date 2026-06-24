@@ -1,4 +1,6 @@
-# Vision-Centric Vehicle Center Estimation
+# GeoVehicle3D
+
+Vision-centric 3D vehicle-center estimation from image geometry.
 
 This repository contains a research pipeline for estimating vehicle centers from
 image geometry. YOLO is used only as a 2D vehicle proposal generator; the core
@@ -7,7 +9,7 @@ pipeline.
 
 ## Project Focus
 
-The main branch should present the project as a vision-centric vehicle-center
+`GeoVehicle3D` should be presented as a vision-centric vehicle-center
 estimation system, not as a YOLO detection demo.
 
 The project-specific work is:
