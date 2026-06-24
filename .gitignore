@@ -1,0 +1,65 @@
+# macOS
+.DS_Store
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+vehicle_demo/venv/
+vehicle_demo/mono3d_venv/
+venv/
+mono3d_venv/
+.venv/
+
+# Model weights and large binaries
+vehicle_demo/models/
+models/
+*.pt
+*.pth
+*.onnx
+*.engine
+*.pcapng
+*.bag
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.mat
+
+# Generated outputs and experiment artifacts
+vehicle_demo/outputs/
+outputs/
+runs/
+wandb/
+
+# Local datasets
+1.26Test/
+vehicle_demo/3.13Test/
+vehicle_demo/4.1Test/
+vehicle_demo/4.15Test/
+vehicle_demo/data/
+3.13Test/
+4.1Test/
+4.15Test/
+3.13/
+4.1/
+4.15/
+
+# Third-party checkouts
+vehicle_demo/ultralytics/
+vehicle_demo/third_party/
+third_party/
+
+# Local reports and office/editor temporary files
+~$*
+*.docx
+*.pptx
+*.mov
+*.mp4
+*.tmp
+*.bak

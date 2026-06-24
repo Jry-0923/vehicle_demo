@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "backend": "smoke_or_other_mono3d",
+    "coordinate_frame": "camera_or_project_coordinate_frame_used_by_the_model",
+    "notes": "box_xyxy must be original image pixel coordinates. mono3d_center_m must be [x, y, z] in meters."
+  },
+  "frames": [
+    {
+      "frame_index": 1,
+      "image": "/absolute/path/to/frame.jpg",
+      "detections": [
+        {
+          "box_xyxy": [100.0, 200.0, 300.0, 420.0],
+          "mono3d_center_m": [1.2, 0.4, 12.8],
+          "mono3d_size_m": [4.5, 1.8, 1.6],
+          "mono3d_yaw": 0.05,
+          "mono3d_score": 0.83,
+          "label": "car"
+        }
+      ]
+    }
+  ]
+}
